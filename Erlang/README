@@ -1,0 +1,46 @@
+Name:		Saiprakash Nalubolu
+B-Number:	B01037579
+Email:		snalubolu@binghamton.edu
+
+This project involves the implementation of several functions to handle polynomial evaluations and related operations in an Erlang environment. The functions are designed to work together to manage polynomial data and respond to server messages.
+
+## Functions Overview ###
+
+### 1. `rec_poly_eval/2` ###
+**Description**: Evaluates a polynomial given a list of coefficients and a value for X recursively.
+**Input**: Coefficients list (`Coeffs`), value for X (`X`).
+**Output**: Evaluated polynomial result.
+
+### 2. `non_rec_poly_eval/2` ###
+**Description**: Evaluates a polynomial non-recursively using list comprehensions and folding.
+**Input**: Coefficients list, value for X.
+**Output**: Evaluated polynomial result.
+
+### 3. `tuple_poly_eval/2` ###
+**Description**: Converts a list of tuples into coefficients and evaluates the polynomial using `non_rec_poly_eval/2`.
+**Input**: Tuple list (`TupleCoeffs`), value for X.
+**Output**: Evaluated polynomial result.
+
+### 4. `assoc_lookup/3` ###
+**Description**: Looks up the value of a key in an associative list and returns a default value if the key is not found.
+**Input**: Key, associative list (`Assoc`), default function (`DefaultFn`).
+**Output**: Value associated with the key or the result of `DefaultFn()`.
+
+### 5. `id_poly_eval/3` ###
+**Description**: Evaluates a polynomial where coefficients are either numbers directly or keys to values in an associative list.
+**Input**: Associative list, list of identifier coefficients (`IdCoeffs`), value for X.
+**Output**: Evaluated polynomial result.
+
+### 6. `server_fn/2` ###
+**Description**: A server function that handles incoming messages to manage polynomial coefficients and evaluations.
+- **Operations**:
+  - `stop`: Stops the server.
+  - `set_assoc`: Sets a new associative list.
+  - `set_coeffs`: Sets new coefficients.
+  - `eval`: Evaluates a polynomial and returns the result.
+  - Logs unknown messages.
+- **Input**: Initial associative list, initial coefficients.
+- **Behavior**: Listens for messages and acts accordingly, updating state or performing evaluations.
+
+
+**Status** - All 48 test cases passed.

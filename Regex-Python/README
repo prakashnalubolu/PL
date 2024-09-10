@@ -1,0 +1,87 @@
+Name:		Saiprakash Nalubolu
+B-Number:	B01037579
+Email:		snalubolu@binghamton.edu
+
+sentence 
+    : { data_literal } 
+    ;
+
+data_literal 
+    : list_literal 
+    | tuple_literal 
+    | map_literal 
+    | primitive_literal 
+    ;
+
+primitive_literal 
+    : integer 
+    | atom 
+    | boolean 
+    ;
+
+list_literal 
+    : "[", [ data_literal { ",", data_literal } ], "]" 
+    ;
+
+tuple_literal 
+    : "{", [ data_literal { ",", data_literal } ], "}" 
+    ;
+
+map_literal 
+    : "%{", [ key_pair { ",", key_pair } ], "}" 
+    ;
+
+key_pair 
+    : data_literal, "=>", data_literal 
+    | key, data_literal 
+    ;
+
+integer 
+    : digit { digit | "_" } 
+    ;
+
+atom 
+    : ":", ( alphabetic | "_" ), { alphanumeric | "_" } 
+    ;
+
+key 
+    : ( alphabetic | "_" ), { alphanumeric | "_" }, ":" 
+    ;
+
+boolean 
+    : "true" 
+    | "false" 
+    ;
+
+digit 
+    : "0" 
+    | "1" 
+    | "2" 
+    | "3" 
+    | "4" 
+    | "5" 
+    | "6" 
+    | "7" 
+    | "8" 
+    | "9" 
+    ;
+
+alphabetic 
+    : "a" | "b" | "c" |"d" | "e" | "f" | "g" | "h" | "i" |"j" | "k" | "l" |"m" | "n" | "o" |"p" | "q" | "r" |"s" | "t" | "u" |"v" | "w" | "x" | "y" | "z" 
+    | "A" | "B" | "C" |"D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" |"M" | "N" | "O" |"P" | "Q" | "R" |"S" | "T" | "U" |"V" | "W" | "X" | "Y" | "Z" 
+    ;
+
+alphanumeric 
+    : digit 
+    | alphabetic 
+    ;
+
+to JSON (output as `{ "%K": type, "%v": value}`) where type is dataliteral type and value is dataliteral value
+
+Linear whitespace and #-to-end-of-line comments ignored.
+
+Status of the project:
+successfully implemented Bool values, Int, Lists and tuples
+Regarding maps, Empty maps are working as expected and %{22=33} or %{[11]=>33} these kind of simple maps are working as expected
+but syntatic sugars and tuples in map are not working since map end and tuple end are same
+I am unable to get a logic which handles this

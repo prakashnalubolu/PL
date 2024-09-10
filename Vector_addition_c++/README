@@ -1,0 +1,15 @@
+Name:		Saiprakash Nalubolu
+B-Number:	B01037579
+Email:		snalubolu@binghamton.edu
+
+Vector addition is performed through C++
+
+N_OPS and N_ENTRIES can be given as first input.(Error handling is done such that these are positive values)
+N_OPS denotes number of Vector additions can be performed
+N_ENTRIES denote number of integer values in a vector
+
+Later with number of operations and number of entries, sum vectors for each 2 vectors can be displayed in output.
+
+NOTE: As per the requirement only pair of vectors can be added. Three or more vector addition is not allowed, once you enter 2 vectors then immediately sum vector is printed in output, then one can give next pair of vectors if N_OPS is greater than one.
+
+All memory is dynamically allocated and released before termination.

@@ -1,0 +1,27 @@
+Name:		Saiprakash Nalubolu
+B-Number:	B01037579
+Email:		snalubolu@binghamton.edu
+
+# status and Description of the project:
+
+This project focuses on implementing various expression evaluators in Haskell. The goal is to parse and evaluate expressions represented in different forms, such as postfix, using expression trees. This project demonstrates the use of recursion, pattern matching, and higher-order functions in Haskell.
+
+## Features
+
+**Expression Tree Evaluation**: Implements evaluation for integer expression trees (`IntExpr`), identifier-based expression trees (`IdExpr`), and expression trees with possible `Nothing` values (`MaybeExpr`).
+
+**Postfix Expression Parsing and Evaluation**: Parses postfix notation expressions and constructs corresponding expression trees for evaluation.
+
+**List Operations**: Includes a custom implementation of selecting elements from a list at regular intervals (`selectNApart`).
+
+## Implemented Functions
+
+- `evalIntExpr :: IntExpr -> Int`: Evaluates an integer expression tree.
+
+- `evalIdExpr :: IdExpr -> Assoc Int -> Int`: Evaluates an expression tree containing string identifiers, using an association list to resolve identifiers.
+
+- `evalMaybeExpr :: MaybeExpr -> Assoc Int -> Maybe Int`: Evaluates an expression tree with possible `Nothing` values for undefined identifiers.
+
+- `postfixExpr :: String -> PostfixExpr`: Parses a string containing a postfix notation expression and returns the corresponding expression tree.
+
+- `selectNApart :: Int -> [e] -> [e]`: Returns a list containing elements from the original list at intervals of `n`.
